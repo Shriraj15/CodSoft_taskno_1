@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shriraj's Portfolio</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    p{
+        color: black;
+        font-size: large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 300;
+    }
+    nav {
+      background-color: #333;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      min-height: 100vh;
+    }
+    .home{
+      color: #333;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h2{
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: x-large;
+      color: #d10758;
+      margin-top: 80px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 100px 10%;
+      background-color: #ffffff;
+    }
+    #home .intro-text {
+      max-width: 600px;
+      text-align: left;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    #home h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      
+    }
+    #home p {
+      font-size: 18px;
+      color: #555;
+    }
+    #home .highlight {
+      color: #d10758;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    #home img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+     border-radius: 10px
+    }
+    
+    .cert-grid {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 20px;
+         max-width: 900px;
+         margin: 30px auto;
+         padding: 10px;
+    }
+    .cert-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px #000000b5;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .cert-grid img:hover {
+        transform: scale(1.05);
+    }
+    #certifications{
+        background-color: #4e4e4e;
+    }
+    .proj-grid {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 20px;
+         max-width: 900px;
+         margin: 30px auto;
+         padding: 10px;
+    }
+    .proj-grid img {
+        width: 100%;
+        height: auto;
+        border: #fdfdfd 3px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .proj-grid img:hover {
+        transform: scale(1.05);
+    }
+    #projects{
+      background-image: url("https://wallpaperaccess.com/full/5228812.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top:0px;
+    }
+    .proj{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: x-large;
+        color: #fdfdfd;
+        margin-top: 80px;
+    }
+    #resume{
+        background-image: url("https://images.hdqwalls.com/wallpapers/dark-abstract-black-minimal-4k-q0.jpg");
+        background-repeat: no-repeat;
+  background-size: cover;
+    }
+    .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 0; 
+}
+
+.btn:hover {
+  background-color: #9fa19e;
+}
+
+    
+    #contact {
+  background-image: url("https://th.bing.com/th/id/R.cb5e0061f62dc6643f94dda9f6011c31?rik=GCutTZcYaYQ7xA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fs2xVedw.jpg&ehk=qsBT%2bsKtQ%2bBt9%2f64n2j6JXIh03TxQFMXAx9bcjP%2f%2fz8%3d&risl=&pid=ImgRaw&r=0 ");
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+    .form{
+      margin-top: 20px;
+      background-color: #333; 
+      width: 350px; 
+      height: 370px;
+      border-radius: 8px;
+      box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.603);
+    }
+    
+    
+    .contact1 h2 {
+      color: rgb(255, 255, 255);
+      text-align: center;
+      margin-top: 100px;
+      margin-bottom: 30px;
+    }
+
+    .contact1 p, .contact1 a {
+      color: white;
+      text-align: center;
+      font-size: medium;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    .contact1 a:hover {
+      text-decoration: underline;
+    }
+    
+    .social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .social-icons img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="intro-text">
+      <!-- <p>Hello</p> -->
+      <h1 class="home">I’m <span class="highlight">Shriraj</span></h1>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Computer Science and Engineering student at <br>SRM TRP Engineering College, Trichy. I’m passionate about<br> front-end development, love building user-friendly websites<br>and continuously learning modern web technologies.
+</p>
+    </div>
+    <img src="shri.jpg" alt="Shriraj Photo">
+  </section>
+
+  <!-- About Section -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+</head>
+<body>
+
+  <!-- About Section -->
+
+<section id="about" style="scroll-margin-top: 70px; display: flex; flex-wrap: wrap; height: 100vh; margin: 0; padding: 0; background: url('img.jpg') no-repeat center center; background-size: cover; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; box-sizing: border-box;">
+  <div style="flex: 1;"></div>
+
+  <!-- Right side -->
+  <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; padding: 30px;">
+    <div style="background-color: #ffffffcc; padding: 20px 25px; border-radius: 10px; box-shadow: 0 4px 20px rgba(68, 67, 67, 0.2); max-width: 500px; width: 100%; max-height: 90vh; overflow: hidden;">
+
+      <!-- Heading -->
+      <h2 style="text-align: center; margin: 0 0 15px; padding: 0; color: #d10758; font-size: 22px;">About Me</h2>
+
+      <!-- Paragraph -->
+      <p style="line-height: 1.5; margin: 0; padding: 0; text-align: justify; font-size: 14.8px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;I’m Shriraj, a passionate and driven Computer Science and Engineering student from Trichy, Tamil Nadu, currently in my third year at SRM TRP Engineering College. With a strong foundation in C and Python, I specialize in front-end and full-stack web development, and I’m currently sharpening my skills as a Front-End React Developer intern at Webdzen Technologies. I enjoy building dynamic, user-friendly websites and am particularly excited by creative web development projects that blend design and functionality.<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond the screen, I find joy in painting, arts & crafts, net surfing, photography and cooking—activities that fuel my creativity and attention to detail. I value collaboration, problem-solving, and continuous learning and I bring strong communication, time management, and adaptability to every project I take on. My goal is to contribute meaningfully to the tech industry by creating engaging digital experiences and continuously evolving as a well-rounded developer.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Skills Section -->
+ <section id="skills" style="padding: 50px 0; background-color: #2c2c2c; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: small;">
+
+  <!-- Row 1: Programming Languages -->
+  <div style="background-color: white; color: black; padding: 20px; margin: 20px auto; width: 80%; border-radius: 12px; text-align: center;">
+    <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Programming Languages</h3>
+    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">Python</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/c_original_logo_icon_146611.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">C</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">Java</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Web Development Tools -->
+  <div style="background-color: white; color: black; padding: 20px; margin: 20px auto; width: 80%; border-radius: 12px; text-align: center;">
+  <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Web Development Tools</h3>
+  <div style="display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
+
+    <div style="text-align: center;">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" style="height:40px; width:40px;" alt="HTML">
+      <div style="font-family: 'Times New Roman', Times, serif;">HTML</div>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" style="height:40px; width:40px;" alt="CSS">
+      <div style="font-family: 'Times New Roman', Times, serif;">CSS</div>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://cdn.freelogovectors.net/wp-content/uploads/2022/10/bootstrap-logo-freelogovectors.net_.png" style="height:40px; width:40px;" alt="Bootstrap">
+      <div style="font-family: 'Times New Roman', Times, serif;">Bootstrap</div>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://pluspng.com/img-png/logo-javascript-png-javascript-tutorials-400.png" style="height:40px; width:40px;" alt="JavaScript">
+      <div style="font-family: 'Times New Roman', Times, serif;">JavaScript</div>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.pMAO_85XGhPyn7ODREkfsAHaGl?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" style="height:38px; width:35px;" alt="ReactJS">
+      <div style="font-family: 'Times New Roman', Times, serif;">ReactJS</div>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Row 3: Development & Version Control -->
+  <div style="background-color: white; color: black; padding: 20px; margin: 20px auto; width: 80%; border-radius: 12px; text-align: center;">
+    <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Development and Version Control</h3>
+    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
+      <div style="text-align: center;">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.QfuBrrVrqpd--YpvS2QwwgAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">ChatGPT</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">GitHub</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.aJ1vz0rPdg0lPezuIg8IygHaHX?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">VS Code</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 4: Design and Prototyping -->
+  <div style="background-color: white; color: black; padding: 20px; margin: 20px auto; width: 80%; border-radius: 12px; text-align: center;">
+    <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Design and Prototyping</h3>
+    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">Figma</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://freelogopng.com/images/all_img/1656733637logo-canva-png.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif;">Canva</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 5: Data Analytics and Visualization Tools-->
+  <div style="background-color: white; color: black; padding: 20px; margin: 20px auto; width: 80%; border-radius: 12px; text-align: center;">
+    <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Data Analytics and Visualization</h3>
+    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
+      <div style="text-align: center;">
+        <img src="https://www.pnguniverse.com/wp-content/uploads/2020/10/Excel-logo-1280x1118.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif; ">MS Excel</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/power-bi-icon.png" style="height:40px; width:40px;">
+        <div style="font-family: 'Times New Roman', Times, serif; ">Power BI</div>
+      </div>
+    </div>
+  </div>
+  <!-- Row 6: Office Productivity Tools-->
+  <!-- Row 6: Office Productivity Tools -->
+<div style="background-color: white; color: black; padding: 20px; margin: 20px auto; width: 80%; border-radius: 12px; text-align: center;">
+  <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Office Productivity Tools</h3>
+  <div style="display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
+    
+    <div style="text-align: center;">
+      <img src="https://logodownload.org/wp-content/uploads/2018/10/word-logo-1-1.png" style="height:40px; width:40px;">
+      <div style="font-family: 'Times New Roman', Times, serif; ">MS Word</div>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.96Itx9KjcJLAXT-QHB-fDgHaHO?w=192&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7" style="height:40px; width:40px;">
+      <div style="font-family: 'Times New Roman', Times, serif;">MS PowerPoint</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+</section>
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <h2 style="color: #ffffff;">Certifications</h2>
+    <div class="cert-grid">
+  <a href="cert1.jpg" target="_blank"><img src="cert1.jpg" alt="Certificate 1"></a>
+  <a href="cert2.jpg" target="_blank"><img src="cert2.jpg" alt="Certificate 2"></a>
+  <a href="cert3.jpg" target="_blank"><img src="cert3.jpg" alt="Certificate 3"></a>
+  <a href="cert4.jpg" target="_blank"><img src="cert4.jpg" alt="Certificate 4"></a>
+  <a href="cert5.jpg" target="_blank"><img src="cert5.jpg" alt="Certificate 5"></a>
+  <a href="cert6.jpg" target="_blank"><img src="cert6.jpg" alt="Certificate 6"></a>
+  <a href="cert7.jpg" target="_blank"><img src="cert7.jpg" alt="Certificate 7"></a>
+  <a href="cert8.jpg" target="_blank"><img src="cert8.jpg" alt="Certificate 8"></a>
+  <a href="cert9.jpg" target="_blank"><img src="cert9.jpg" alt="Certificate 9"></a>
+  <a href="cert10.jpg" target="_blank"><img src="cert10.jpg" alt="Certificate 10"></a>
+  <a href="cert13.jpg" target="_blank"><img src="cert13.jpg" alt="Certificate 13"></a>
+  <a href="cert12.jpg" target="_blank"><img src="cert12.jpg" alt="Certificate 12"></a>
+  <a href="cert15.jpg" target="_blank"><img src="cert15.jpg" alt="Certificate 15"></a>
+  <a href="cert14.jpg" target="_blank"><img src="cert14.jpg" alt="Certificate 14"></a>
+  <a href="cert11.jpg" target="_blank"><img src="cert11.jpg" alt="Certificate 11"></a>
+  
+</div>
+
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="proj">Projects</h2>
+    <div class="proj-grid">
+    <a href="Task03.html" target="_blank"><img src="proj1.jpeg" alt="project1"></a>
+    <a href="Task07.html" target="_blank"><img src="proj2.jpeg" alt="project2"></a>
+    <a href="Task08.html" target="_blank"><img src="proj3.jpeg" alt="project3"></a>
+    <a href="Task04.html" target="_blank"><img src="proj4.jpeg" alt="project4"></a>
+    <a href="Calculator1.html" target="_blank"><img src="proj5.jpeg" alt="project5"></a>
+    <a href="Resume.html" target="_blank"><img src="proj6.jpeg" alt="project6"></a>
+    <a href="Portfolio.html" target="_blank"><img src="proj7.jpeg" alt="project7"></a>
+    <a href="Temple.html" target="_blank"><img src="proj8.jpeg" alt="project8"></a>
+    <a href="Calculator.html" target="_blank"><img src="proj9.jpeg" alt="project9"></a>
+
+
+    </div>
+    <p style="color: #fdfdfd; text-align: center; font-size: medium;"> I am currently building my skills through hands-on practice and learning-focused mini-projects. While I haven’t completed any large-scale projects yet, I’ve worked on several smaller tasks such as designing responsive web pages, building components using React and replicating simple websites to understand structure and layout. One of my current projects is this personal portfolio website, where I’ve applied front-end development concepts to showcase my progress. I’m continuously working on improving my coding abilities and looking forward to create full-fledged projects in the near future.</p>
+   </section>
+
+  <!-- Resume Section -->
+  <section id="resume" style="text-align: center; margin-top: 50px;">
+    <h2 style="color:white; margin-bottom: 20px; margin-top: 200px;">Download My Resume !</h2>
+    <a class="btn" href="Shriraj_S_D_Resume.pdf" download>Download Resume PDF</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    
+  <div class="contact1">
+    <h2>Contact Me</h2>
+    <span class="social-icons">
+  <!-- Gmail -->
+  <a href="mailto:shrirajsd15@gmail.com" target="_blank">
+    <img src="gmail.webp" alt="Gmail">
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/shriraj-s-d" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/shriraj_dharmaraj/" target="_blank">
+    <img src="instagramlogo.webp" alt="Instagram">
+  </a>
+</span>
+<br><br>
+</div>
+    <div>
+      <p style="color: white; font-size: medium; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Let's Connect !</p>
+      <form>
+        <div class="form">
+          <br><label for="fname"><input type="text" style=" height: 20px; width: 300px; border-radius: 5px; font-family: 'Times New Roman', Times, serif; font-size:small; " id="fname" name="fname" placeholder="&nbsp;Name*" required></label>
+          <br><br><label for="email"><input type="email" id="email" name="email" placeholder="&nbsp;Email*" required style="width: 300px; height: 20px; border-radius: 5px; font-family: 'Times New Roman', Times, serif; font-size:small; "></label>
+          <br><br><label for="sub"><input type="text" style="width: 100px; height: 20px; width: 300px; border-radius: 5px; font-family: 'Times New Roman', Times, serif; font-size:small; " id="sub" name="sub" placeholder="&nbsp;Subject"></label>
+          <br><br>
+          <textarea id="message" name="message" placeholder="Type your message here..." style="width: 300px; height: 150px; border-radius: 5px; font-family: 'Times New Roman', Times, serif; font-size: small; resize: both;"></textarea>
+          <br><br><button type="submit" style="color: rgb(0, 0, 0); background-color: rgb(255, 174, 0); border-radius: 5px; font-family: 'Times New Roman', Times, serif; font-size: small;  cursor: pointer;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);">Submit</button>
+      
+
+        </div>
+      </form>
+    </div>
+    <br><br><br>
+    <p style="margin-top: auto; color: white; text-align: center; font-size: small; font-family: 'Lucida Sans', sans-serif;">© 2025 Shriraj S D | All rights reserved</p>
+</section>
+  </section>
+</body>
+</html>

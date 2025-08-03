@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ஆலயங்கள் - The Soul of Tamilnadu</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lucida Sans', sans-serif;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color:#3d0505;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: small;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+    }
+
+    #audioToggle {
+      position: absolute;
+      right: 330px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* SECTION BASE */
+    section {
+      min-height: 100vh;
+      padding-top: 60px; /* space for fixed nav */
+    }
+
+    /* HOME SECTION */
+    #home {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #home video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .box {
+      background: rgba(255, 255, 255, 0.508);
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 500px;
+      text-align: center;
+      margin: auto;
+      color: rgb(0, 0, 0);
+      box-shadow: 0 0 10px rgba(10, 10, 10, 0.646);
+    }
+
+    .box h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: xx-large;
+      margin-top: 10px;
+    }
+    .culture-box {
+      display: flex;
+      justify-content: space-between;
+      border: 2px solid #d4af37;
+      background-color: #f9f6f2;
+      padding: 30px;
+      border-radius: 16px;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.7;
+      color: #333;
+      max-width: 1000px;
+      margin: 40px auto;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    .culture-left, .culture-right {
+      width: 48%;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .culture-left {
+      font-family: 'Noto Sans Tamil', 'Latha', sans-serif;
+    }
+
+    @media screen and (max-width: 768px) {
+      .culture-box {
+        flex-direction: column;
+      }
+
+      .culture-left, .culture-right {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#introduction">Introduction</a>
+    <a href="#famoustemples">Famous Temples</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#grace">Grace & Rythm</a>
+    <a href="#culture">Culture</a>
+  </div>
+  <button id="audioToggle" onclick="toggleAudio()">🔇</button>
+</nav>
+
+<!-- HOME SECTION -->
+<section id="home">
+  <video autoplay muted loop playsinline>
+    <source src="bgvideo2.mp4" type="video/mp4">
+  </video>
+  <div class="box">
+    <h1 style="color: #3d0505e5;">Temples of Tamil Nadu</h1>
+    <p>A Journey Through Spiritual Grandeur and Timeless Traditions</p>
+    <p style="font-style: italic;">"Where devotion meets divine architecture"</p>
+    <button style="border-radius: 5px; padding: 10px 20px; background-color: #3d0505b1;">
+  <a href="#introduction" style="text-decoration: none; color: white; font-weight: 500; font-family: 'Segoe UI', sans-serif; ">Explore Now</a>
+</button>
+
+  </div>
+</section>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="bgmusic.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const audio = document.getElementById("bgMusic");
+  const toggleBtn = document.getElementById("audioToggle");
+
+  let isPlaying = false;
+
+  function toggleAudio() {
+    if (!isPlaying) {
+      audio.play().then(() => {
+        isPlaying = true;
+        toggleBtn.textContent = "🔊";
+      }).catch(e => {
+        console.log("Audio play failed:", e);
+      });
+    } else {
+      audio.pause();
+      isPlaying = false;
+      toggleBtn.textContent = "🔇";
+    }
+  }
+</script>
+
+<!-- CONTINUE with other sections here (unchanged) -->
+
+<!-- Introduction section -->
+<section id="introduction" style="
+  background-image: url('https://thumbs.dreamstime.com/z/colorful-carved-walls-indian-temple-tamil-nadu-state-south-india-90944131.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+">
+  <div style="background-color: rgba(0, 0, 0, 0.594); padding: 60px 20px; margin-top: 30px;">
+    <h2 style="font-size: 32px; margin-bottom: 30px;">The Spiritual Backbone of Tamil Nadu</h2>
+
+    <p style="max-width: 800px; margin: 10px auto; font-size: 17px; line-height: 1.7; background-color: w;">
+      Tamil Nadu is home to some of the oldest and most majestic temples in the world. These sacred spaces are not just places of worship—they are living testaments to our rich culture, history and faith.
+    </p>
+
+    <p style="max-width: 800px; margin: 10px auto; font-size: 15px; line-height: 1.7; color: #ddd;">
+     தமிழ் நாட்டின் கோவில்கள், பண்பாட்டுப் பாரம்பரியத்தின் பெருமைதெரிவிக்கும் ஜீவனுள்ள நினைவுச்சின்னங்களாகவும், ஆன்மீக அற்புதங்களாகவும் திகழ்கின்றன.
+    </p>
+
+    <div style="margin-top: 30px; background-color: rgba(255, 255, 255, 0.85); color: #000; padding: 15px 20px; border-left: 4px solid #ccc; max-width: 700px; margin-left: auto; margin-right: auto; text-align: center;">
+      <p style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">
+        திருக்குறள் 1:
+      </p>
+
+      <p style="font-size: 13px; margin-bottom: 14px; line-height: 1.6;">
+        அகர முதல எழுத்தெல்லாம் ஆதி<br>
+        பகவன் முதற்றே உலகு.
+      </p>
+
+      <p style="font-size: 14px;">
+        <strong>Translation:</strong> Just as the letter "அ" (A) is the beginning of all Tamil letters, <br>
+        God is the origin (beginning) of all things in the world.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Famous Temples Section -->
+<section id="famoustemples" style="
+  position: relative;
+  min-height: 100vh;
+  background: url('kolam6.jpg') center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+">
+
+  <h2 style="font-size: 36px; margin-bottom: 10px; text-shadow: 2px 2px 4px #000;">Timeless Temples of Tamil Nadu</h2>
+  <p style="font-size: 18px; font-style: italic; max-width: 800px; margin-bottom: 30px; text-shadow: 1px 1px 3px #000;">
+    "Tamil temples are the native language of art, architecture and spirituality."
+  </p>
+
+  <button onclick="slide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: none; border: none; font-size: 36px; padding: 5px 10px; cursor: pointer; color: white; text-shadow: 2px 2px 4px #000; z-index: 10;">‹</button>
+  <div style="width: 90%; overflow: hidden; position: relative;">
+    <div id="slider" style="display: flex; transition: transform 0.5s ease-in-out;">
+      <!-- Temple Cards Here -->
+       <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://i.redd.it/29eftkcwukm51.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Meenakshi Amman Temple, Madurai <br><p style="font-size: x-small;">மீனாக்ஷி அம்மன் திருக்கோவில், மதுரை</p></p>
+      </div>
+
+      <!-- Temple 2 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://i.redd.it/omywrnf0nqx41.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Brihadeeswarar Temple, Thanjavur <br><p style="font-size: x-small;"> பெருவுடையார் திருக்கோவில், தஞ்சாவூர்</p></p>
+      </div>
+
+      <!-- Temple 3 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://i.pinimg.com/originals/cf/2d/9b/cf2d9b6a5a970473f2861bddf02d454f.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Ramanathaswamy Temple, Rameswaram<br><p style="font-size: x-small;">இராமநாதசுவாமி  திருக்கோவில், இராமேஸ்வரம்</p></p>
+      </div>
+
+      <!-- Temple 4 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://th.bing.com/th/id/R.1e00204b348c328e8232b608f2040369?rik=1eo0agntxCSNAQ&riu=http%3a%2f%2fwww.tirthayatra.org%2fwp-content%2fuploads%2f2016%2f04%2f3786918573_a73f14972c_o-1024x768.jpg&ehk=L7oK7hlLPp2HmeJZTuC%2bZpwp09cGcweaKM%2f%2bSz8qmOY%3d&risl=&pid=ImgRaw&r=0" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Sri Ranganathaswamy Temple, Srirangam, Trichy<br><p style="font-size: x-small;">அரங்கநாதசுவாமி திருக்கோவில், ஸ்ரீரங்கம், திருச்சி</p></p>
+      </div>
+
+      <!-- Temple 5 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://hblimg.mmtcdn.com/content/hubble/img/ttd_images_march/mmt/activities/m_Chidambaram_the_nataraja_temple_1_l_667_1000.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;"> Thillai Natarajar Temple, Chidambaram<br> <p style="font-size: x-small;">நடராஜர் திருக்கோவில், சிதம்பரம்</p></p>
+      </div>
+
+      <!-- Temple 6 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://c2.staticflickr.com/4/3477/3965842943_442871e59f_b.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Kapaleeshwarar Temple, Mylapore, Chennai<br><p style="font-size: x-small;">கபாலீஸ்வரர் திருக்கோவில், மயிலாப்பூர், சென்னை</p></p>
+      </div>
+
+      <!-- Temple 7 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.pl8JP_tbD2E_IOf66WAdvAHaJQ?r=0&w=955&h=1194&rs=1&pid=ImgDetMain&o=7&rm=3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Subramaniya Swamy Temple, Thiruchendur<br><p style="font-size: x-small;">சுப்பிரமணியசுவாமி திருக்கோவில், திருச்செந்தூர்</p></p>
+      </div>
+
+      <!-- Temple 8 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="d36jkc75.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Arunachaleswarar Temple, Tiruvannamalai<br><p style="font-size: x-small;">அண்ணாமலையார் திருக்கோவில், திருவண்ணாமலை</p></p>
+      </div>
+
+      <!-- Temple 9 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="https://ramyashotels.com/wp-content/uploads/2021/03/246510-1536x1152.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Samayapuram Mariyamman Temple, Samayapuram,Trichy<br><p style="font-size: x-small;">சமயபுரம் மாரியம்மன் திருக்கோவில், திருச்சி</p></p>
+      </div>
+
+      <!-- Temple 10 -->
+      <div style="min-width: 300px; margin: 0 10px; background-color: rgba(0,0,0,0.6); border-radius: 10px; padding: 10px; color: white; text-align: center;">
+        <img src="d4q865po.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+        <p style="margin-top: 10px; font-weight: bold;">Jambhukeswarar Temple, Thiruvanaikaval, Trichy<br><p style="font-size: x-small;">ஜம்புகேஸ்வரர் திருக்கோவில், திருவானைக்காவல், திருச்சி</p></p>
+      </div>
+
+      <!-- (Use all 10 temple cards you've added previously) -->
+      <!-- ... (No changes in temple cards, omitted here for brevity) ... -->
+    </div>
+  </div>
+
+  <button onclick="slide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; font-size: 36px; padding: 5px 10px; cursor: pointer; color: white; text-shadow: 2px 2px 4px #000; z-index: 10;">›</button>
+</section>
+
+<script>
+  let scrollAmount = 0;
+  function slide(direction) {
+    const slider = document.getElementById('slider');
+    const scrollStep = 320;
+    scrollAmount += direction * scrollStep;
+    const maxScroll = slider.scrollWidth - slider.parentElement.clientWidth;
+    if (scrollAmount < 0) scrollAmount = 0;
+    if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+    slider.style.transform = `translateX(-${scrollAmount}px)`;
+  }
+</script>
+<!-- Architecture and Design -->
+ <section id="architecture"
+  style="padding: 60px 20px; color: #3b2f2f;
+         background-image: linear-gradient(#ffd9009f, rgba(244, 223, 139, 0.75)), 
+                           url('https://i.pinimg.com/originals/9a/bb/d9/9abbd994d27c37d2e2ae60c79c29dba6.jpg');
+         background-repeat: no-repeat;
+         background-size: cover; font-weight: 700;" >
+
+  <div style="max-width: 900px; margin: auto;">
+
+    <h2 style="font-size: 32px; margin-bottom: 30px; text-align: center; color: #9d1010;">Architecture and Design</h2>
+
+    <p style="font-size: 17px; line-height: 1.7;">
+      The temple architecture of Tamil Nadu is a world-renowned marvel, showcasing the brilliance of ancient engineering, art and devotion. These temples are not only spiritual sanctuaries but also architectural masterpieces that reflect the culture, legacy and craftsmanship of their time.
+    </p>
+
+    <p style="font-size: 21px; margin-top: 30px; color:   #9d1010;"><strong>Key Features:</strong></p>
+    <ul style="font-size: 16px; line-height: 1.7; padding-left: 20px;">
+      <li>Towering Gopurams (Gateway towers) <span style="color: #c51919;"><span style="font-size: small;">(கோபுரங்கள்)</span></span></li>
+      <li>Ornate, Carved pillars <span style="color:  #c51919;"><span style="font-size: small;">(செதுக்கிய தூண்கள்)</span></span></li>
+      <li>Intricate vimanas (Sanctum towers) <span style="color:  #c51919;"><span style="font-size: small;">(விமானங்கள்)</span></span></li>
+      <li>Natural ventilation and acoustic design <span style="color:  #c51919;"><span style="font-size: small;">இயற்கை காற்றோட்டம் மற்றும் ஒலி வடிவமைப்பு</span></span></li>
+      <li>Detailed stone sculptures and frescoes <span style="color: #c51919;"><span style="font-size: small;">(வெளித்திறந்த பாறைச் சிற்பங்கள் மற்றும் சுவரொப்பங்கள்)</span></span></li>
+    </ul>
+
+    <p style="font-size: 21px; margin-top: 30px; color:   #9d1010;"><strong>Famous Architectural Styles:</strong></p>
+    <ul style="font-size: 16px; line-height: 1.7; padding-left: 20px;">
+      <li>Pallava Style <span style="color: #c51919;"><span style="font-size: small;">(பல்லவா பாணி)</span></span></li>
+      <li>Chola Style <span style="color: #c51919;"><span style="font-size: small;">(சோழ பாணி)</span></span></li>
+      <li>Pandya Style <span style="color: #c51919;"><span style="font-size: small;">(பாண்டிய பாணி)</span></span></li>
+      <li>Nayak Style <span style="color: #c51919;"><span style="font-size: small;">(பாண்டிய பாணி)</span></span></li>
+      <li>Dravidian Style <span style="color: #c51919;"><span style="font-size: small;">(பாண்டிய பாணி)</span></span></li>
+    </ul>
+
+    <p style="font-size: 17px; margin-top: 30px; line-height: 1.7;">
+      Each temple tells a story—of a dynasty, a deity and the skilled hands that shaped it from stone. Tamil Nadu's temple architecture is a living museum that celebrates the union of art, science and spirituality.
+    </p>
+
+  </div>
+</section>
+
+<!-- Dance Section -->
+<section id="grace" style="background: url('https://wallpapercave.com/wp/wp6544942.jpg') no-repeat center center / cover; padding: 80px 0; font-family: 'Segoe UI', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start;">
+    
+    <div style="width: 50%; background:linear-gradient( rgba(224, 198, 3, 0.429),  rgba(160, 144, 6, 0.703) , rgba(224, 198, 3, 0.22)); padding: 30px; border-radius: 16px; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+
+      <h3 style="font-size: 20px; font-weight: bold; color: #d3b031; margin-bottom: 20px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Steps of Divinity : Classical Arts in Temples
+      </h3>
+
+      <!-- Tamil Full Paragraph -->
+      <p style="font-size: 11px; line-height: 1.7; color: #ffffff; font-family: 'Noto Sans Tamil', 'Latha', sans-serif; margin-bottom: 25px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;தமிழர் கோயில்கள் பாரம்பரிய கலைகளின் தாயகமாக விளங்குகின்றன. பாரதநாட்டியம், கூத்து, கரகாட்டம், மயிலாட்டம், பொய்க்கால் குதிரை ஆட்டம், ஒயிலாட்டம், தேவராட்டம், பொம்மலாட்டம், தப்பாட்டம், கவடி ஆட்டம் மற்றும் வில்லுப்பாட்டு போன்ற கலைகள் கோயில்களில் பிறந்து வளர்ந்தன. தேவதாசிகள் தினசரி இறைவனுக்காக நடனம் ஆடியார்கள். கோயில்கள் கலைஞர்களுக்கான அரங்கேற்ற அரங்கமாக இருந்தன. திருவிழாக்களில் கோயில்களில் நடன நிகழ்ச்சிகள் நடைபெறும். மண்டபங்கள் இசை மற்றும் நடனத்துக்கான சிறந்த சூழலை வழங்கின. கோயில்கள் சமூகக் கலாசாரத்தின் மையமாக இருந்தன. கலையின் ஊடாக பக்தி வெளிப்பட்டது. இசை, நடனம், நாடகம் எல்லாம் ஒரே இடத்தில் தோன்றின. கோயில்கள் கலை வளர்ச்சி பெற்ற புண்ணிய பூமியாகும். இன்றும் சில கோயில்களில் பாரம்பரிய நடன விழாக்கள் நடைபெற்று வருகின்றன. மக்கள் கலாசாரத்தை அனுபவிக்க கோயில்களை நாடுகின்றனர். தமிழர் பாரம்பரியம் இசை மற்றும் நடனத்தில் மேலோங்கி இருந்தது. கோயில்கள் கலைஞர்களுக்கான களமாக இருந்தன. இவை கலாசார மரபுகளைக் காட்டும் அரிய சாட்சியங்கள்.
+      </p>
+
+      <!-- English Full Paragraph -->
+      <p style="font-size: 13px; line-height: 1.7; color: #ffffff;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tamil temples stand as the birthplace of many traditional art forms. Dances like Bharatanatyam, Koothu, Karagattam, Mayilattam, Poikkaal Kuthirai Aattam, Oyilattam, Devarattam, Bommalattam, Thappattam, Kavadi Aattam and Villupattu originated and flourished here. Devadasis performed daily dances as offerings to the deity. Temples served as prime venues for artistic debut performances. Dance programs were organized during temple festivals. The mandapams provided excellent settings for music and dance. Temples were hubs of community culture. Devotion was expressed through art. Music, dance and rama all emerged from one sacred space. Temples became holy grounds where arts evolved. Even today, traditional dance festivals are held in some temples. People visit temples to experience cultural depth. Tamil heritage excelled in both music and dance. Temples offered a platform for emerging artists. They are living testaments to our rich cultural legacy.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Culture section -->
+ <section id="culture" style="background-image: url('https://wallpapercave.com/wp/wp7752321.jpg'); 
+                 background-size: cover; 
+                 background-position: center; 
+                 background-repeat: no-repeat; 
+                 padding: 80px 20px;">
+
+  <h3 style="font-size: 30px; text-align: center; margin-top: 0px; font-weight: bold; color: #ffffff; background-color: #4c00ff;">
+    Essence of Culture
+  </h3>
+
+  <div class="culture-box">
+    <div class="culture-left" style="font-size: small;">
+      <strong>தமிழர் பண்பாடு</strong> என்பது பாரம்பரியம், பக்தி, கலை மற்றும் சமுதாய ஒற்றுமையால் நெய்யப்பட்ட சித்திரம் ஆகும். ஒவ்வொரு திருநாள், கோவில் வழிபாடு, ஊர்திருவிழாவும் தமிழரின் மூலநடுநிலை, அருள்மிகு அனுபவம் மற்றும் ஒற்றுமையின் அங்கீகாரம் ஆகியவற்றைக் காண்பிக்கின்றன.<br><br>
+
+      நாதஸ்வரத்தின் இசை, மல்லிகை பூவின் மணம், விடியற்கால கோலங்கள் — இவை அனைத்தும் ஆறு உணர்வுகளையும் தொடும் தனித்துவ கலாசார அனுபவங்களை அளிக்கின்றன.<br><br>
+
+      தமிழர் கோவில்கள் வெறும் வழிபாட்டிடம் மட்டுமல்ல; அவை பண்பாட்டு மரபுகள் மிகும் வாழ்வூடுகள் ஆகும். ஒவ்வொரு விழாவும் பசுமை, பரம்பரை, பக்தியை கொண்டாடும் ஒரு பெருமையான தருணம்.
+    </div>
+
+    <div class="culture-right" style="font-size: medium;">
+      <strong>Tamil culture</strong> is a rich canvas woven with tradition, devotion, art, and unity. Every festival, temple ritual, and local celebration reflects deep spiritual roots, divine experience, and communal harmony.<br><br>
+
+      The music of Nadaswaram, the scent of jasmine, and the morning kolam patterns engage all six senses to offer a complete cultural immersion.<br><br>
+
+      Temples in Tamil Nadu are not just places of prayer — they are living cultural centers. Each festival becomes a proud moment to celebrate nature, ancestry and inner faith through traditions.
+    </div>
+  </div>
+</section>
+<footer style="background: url('kolam6.jpg') no-repeat center center / cover; padding: 40px 0; text-align: center; color: white; font-family: 'Segoe UI', sans-serif; font-size: 14px; border-top: 1px solid #333;">
+  <div style="margin-bottom: 10px; font-weight: 500;">
+    © 2025 Tamil Culture Showcase | Designed by Shriraj S D
+  </div>
+  <div style="margin-top: 10px;">
+    <a href="mailto:shrirajsd15@gmail.com" style="margin: 0 15px; color: white; text-decoration: none;">
+      <span style="display: inline-flex; align-items: center;">
+        <img src="gmail.webp" alt="email_logo" height="20" width="20" style="vertical-align: middle; margin-right: 6px;">
+        <span style="vertical-align: middle;">Email</span>
+      </span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/Shriraj-S-D" target="_blank" style="margin: 0 15px; color: white; text-decoration: none;">
+      <span style="display: inline-flex; align-items: center;">
+        <img src="https://www.serosoft.com/wp-content/uploads/2017/11/Linkedin_circle.svg_-1100x1100.png" alt="Linkedin_logo" height="20" width="20" style="vertical-align: middle; margin-right: 6px;">
+        <span style="vertical-align: middle;">LinkedIn</span>
+      </span>
+    </a>
+
+    <a href="https://www.instagram.com/shriraj_dharmaraj" target="_blank" style="margin: 0 15px; color: white; text-decoration: none;">
+      <span style="display: inline-flex; align-items: center;">
+        <img src="instagramlogo.webp" alt="instagram_logo" height="20" width="20" style="vertical-align: middle; margin-right: 6px;">
+        <span style="vertical-align: middle;">Instagram</span>
+      </span>
+    </a>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

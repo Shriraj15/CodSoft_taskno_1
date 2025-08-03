@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <style>
+    :root {
+      --bg-image-dark: url('https://brocksfield.com/wp-content/uploads/2022/05/Marketing-STRATEGY-vs-Marketing-Plan-Banner-4-scaled.jpg');
+      --bg-image-light: url('https://thehumanfactor.biz/wp-content/uploads/2016/03/math-bg.png');
+      --calc-bg-dark: rgba(117, 117, 115, 0.883);
+      --calc-bg-light: rgba(63, 63, 63, 0.85);
+      --btn-bg-dark: #3d3d3ce5;
+      --btn-bg-light: #ffffffeb;
+      --btn-hover-dark: #000000;
+      --btn-hover-light: #a5a5a5;
+      --text-dark: #000000;
+      --text-light: #000000;
+      --display-bg-light: #ffffffe5;
+      --display-bg-dark: #fffaf295;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: var(--bg-image-dark) no-repeat center center fixed;
+      background-size: cover;
+      transition: background 0.5s ease;
+    }
+
+    body.light-mode {
+      background: var(--bg-image-light) no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .calculator {
+      background: var(--calc-bg-dark);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(255, 255, 255, 0.204);
+      width: 220px;
+      transition: background 0.3s ease;
+    }
+
+    body.light-mode .calculator {
+      background: var(--calc-bg-light);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.79);
+    }
+
+    .display {
+      width: 100%;
+      height: 40px;
+      font-size: 1.4em;
+      text-align: right;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      border: none;
+      background: var(--display-bg-dark);
+      color: var(--text-light);
+      border-radius: 6px;
+    }
+
+    body.light-mode .display {
+      background: var(--display-bg-light);
+      color: var(--text-dark);
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1em;
+      border: none;
+      border-radius: 6px;
+      background: var(--btn-bg-dark);
+      color: #ffffff;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--btn-hover-dark);
+    }
+
+    body.light-mode button {
+      background: var(--btn-bg-light);
+      color: #000000;
+    }
+
+    body.light-mode button:hover {
+      background: var(--btn-hover-light);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button:nth-child(17) {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</div>
+
+  <div class="calculator">
+    <input type="text" class="display" id="display" disabled />
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="deleteChar()">⌫</button>
+      <button onclick="appendValue('%')">%</button>
+      <button onclick="appendValue('/')">÷</button>
+
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('*')">×</button>
+
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="appendValue('-')">−</button>
+
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <button onclick="appendValue('+')">+</button>
+
+      <button onclick="appendValue('0')">0</button>
+      <button onclick="appendValue('.')">.</button>
+      <button onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="clickSound" src="button-4-214382.mp3"></audio>
+  <audio id="themeSound" src="button-4-214382.mp3"></audio>
+
+  <script>
+    const display = document.getElementById("display");
+    const themeIcon = document.getElementById("themeIcon");
+    const clickSound = document.getElementById("clickSound");
+    const themeSound = document.getElementById("themeSound");
+
+    function playClick() {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
+
+    function appendValue(value) {
+      display.value += value;
+      playClick();
+    }
+
+    function clearDisplay() {
+      display.value = "";
+      playClick();
+    }
+
+    function deleteChar() {
+      display.value = display.value.slice(0, -1);
+      playClick();
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = "Error";
+      }
+      playClick();
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+      themeIcon.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+      themeSound.currentTime = 0;
+      themeSound.play();
+    }
+  </script>
+</body>
+</html>
